@@ -8,7 +8,7 @@ Commencé 14h30, fini 17h40 (3h10min)
 20 min pour identifier les "tickets", réalistation de l'exercice avec les "Tasks".
 20 min pour essayer de fair une création de Task soldé par un echec de compréhension du système de création de records.
 
-Developpement un peu long car utilisation de Postman pour tester les requêtes, avant de les mettre et tester sur le projet et la logique liée aux routes des APIs n'est pas facile à cernée.
+Developpement un peu long car utilisation de Postman pour tester les requêtes, avant de les mettre et tester sur le projet et la logique liée aux routes des APIs n'est pas facile à cernée via la documentation.
 
 Server : Apache 2.4.39 (WAMP)
 PHP : 7.3.5
