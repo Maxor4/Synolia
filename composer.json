@@ -1,0 +1,14 @@
+{
+  "require": {
+    "nategood/httpful": "*",
+    "smarty/smarty": "^3.1",
+    "twbs/bootstrap": "^4.2",
+    "ext-json": "*"
+  },
+  "config": {
+    "optimize-autoloader": true
+  },
+  "autoload": {
+    "psr-0": {"": "src/"}
+  }
+}
