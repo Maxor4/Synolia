@@ -46,5 +46,5 @@
         </table>
     </div>
 
-    <input type="button" class="button" id="btnAjax" value="Créer" onclick="callAjax()">
+    <input type="button" class="button" id="btnAjax" value="Créer" onclick="corsRequest()">
 </div>
