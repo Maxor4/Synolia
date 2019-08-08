@@ -37,22 +37,14 @@ function callAjax(){
 function createCORSRequest(method, url) {
     var xhr = new XMLHttpRequest();
     if ("withCredentials" in xhr) {
-        // XHR for Chrome/Firefox/Opera/Safari.
         xhr.open(method, url, true);
-    } else if (typeof XDomainRequest != "undefined") {
-        // XDomainRequest for IE.
-        xhr = new XDomainRequest();
-        xhr.open(method, url);
     } else {
-        // CORS not supported.
         xhr = null;
     }
     return xhr;
 }
 
-// Make the actual CORS request.
 function corsRequest() {
-    // This is a sample server that supports CORS.
     var url = "https://sg-cmdpractice.demo.sugarcrm.eu/rest/v11_5/oauth2/token";
 
     var xhr = createCORSRequest('POST', url);
@@ -61,7 +53,6 @@ function corsRequest() {
         return;
     }
 
-    // Response handlers.
     xhr.onload = function() {
         console.log('Response from CORS request to ' + url);
     };
@@ -74,7 +65,6 @@ function corsRequest() {
 }
 
 function envoieAjax(param, fonctionFail) {
-    //Fonction que l'on doit exécuter comme un callback
     var fonctionSuccess = param.success,
         defaut =    {
             dataType: 'json',
