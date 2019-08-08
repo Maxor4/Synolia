@@ -21,3 +21,8 @@ Libraries : Httpful   (envoi de requestes APIs, permet d'economiser le temps de 
 JS = 2H (echec)
 
 Essai de requêtes par Ajax et par CORS, Echec dans les 2 cas, Bloqué par l'erreur de requête cross-origin interdite.
+
+
+Améliorations / Finitions :
+
+Séparer les méthodes et eventuellement les passer sont symfony avec controllers et services. Améliorer le design du front. Améliorer les sécurité des appels.
