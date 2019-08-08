@@ -1,29 +1,28 @@
 <div class="container">
     <br />
 
-    <h3 align="center">ALBUMS</h3>
+    <div>
+        <p class="greeting-id">The ID is </p>
+        <p class="greeting-content">The content is </p>
+    </div>
+
+    <h3 align="center">Contacts</h3>
 
     <div id="album" class="table-responsive" style="margin-top: 5em">
         <table id="dtAlbum" class="table table-striped table-bordered table-sm" width="100%">
             <thead>
                 <tr>
-                    <th>Album</th>
-                    <th>Artiste</th>
-                    <th>Année</th>
-                    <th>Prix</th>
-                    <th>Genre</th>
-                    <th>Pays</th>
+                    <th>Prenom</th>
+                    <th>Nom</th>
+                    <th>Email</th>
                 </tr>
             </thead>
             <tbody>
-                {foreach $albums as $a}
+                {foreach $contacts as $c}
                     <tr>
-                        <td >{$a->getAlbum()}</td>
-                        <td >{$a->getArtist()}</td>
-                        <td >{$a->getYear()}</td>
-                        <td >{$a->getPrice()}</td>
-                        <td >{$a->getGenre()}</td>
-                        <td >{$a->getNation()}</td>
+                        <td >{$c['first_name']}</td>
+                        <td >{$c['last_name']}</td>
+                        <td >{$c['email'][0]['email_address']}</td>
                     </tr>
                 {/foreach}
             </tbody>
@@ -33,61 +32,24 @@
         <table id="dtArtiste" class="table table-striped table-bordered table-sm" width="100%">
             <thead>
             <tr>
-                <th>Artiste</th>
-                <th>Pays</th>
-                <th>Genre</th>
+                <th>Nom</th>
+                <th>Statut</th>
+                <th>Date Due</th>
+                <th>Contact</th>
             </tr>
             </thead>
             <tbody>
-            {foreach $artists as $ar}
+            {foreach $tasks as $t}
                 <tr>
-                    <td >{$ar['n.artNom']}</td>
-                    <td >{$ar['n.libNat']}</td>
-                    <td >{$ar['n.libGenre']}</td>
+                    <td >{$t['name']}</td>
+                    <td >{$t['status']}</td>
+                    <td >{$t['date_due']}</td>
+                    <td >{$t['contact_name']}</td>
                 </tr>
             {/foreach}
             </tbody>
         </table>
     </div>
+
+    <input type="button" class="button" id="btnAjax" value="Créer" onclick="callAjax()">
 </div>
-
-{*<div id="avertTableStockAll" class="containerVoirStock">
-    <div class="entete clearfix">
-        <div class="image">Album</div>
-        <div class="manufacturer">Artiste</div>
-        <div class="reference">Année</div>
-    </div>
-    <div class="corps clearfix">
-        {foreach $albums as $a}
-            <div class="tableStockLocatif clearfix"
-                 onClick="affichageDetails({$a->getId()})"
-            >
-                <div class="reference">
-                    ghjbnj
-                </div>
-                <div class="manufacturer">hbjhbhj</div>
-                <div class="name">bhjh</div>
-                <div class="stock">
-
-                </div>
-                <div id="ongletAlbum{$a->getId()} hide">
-                    <div class="enteteNumLot clearfix">
-                        <div class="reference">&nbsp;</div>
-                        <div class="manufacturer">&nbsp;</div>
-                        <div class="numlot">
-                            Numéro de lot
-                        </div>
-                        <div class="peremption">
-                            Périmé le
-                        </div>
-                        <div class="stock" >
-                            Stock
-                        </div>
-                        <div class="details"></div>
-                    </div>
-                    <div class="containerListeNumlot"></div>
-                </div>
-            </div>
-        {/foreach}
-    </div>
-</div>*}

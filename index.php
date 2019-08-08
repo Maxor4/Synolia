@@ -42,10 +42,10 @@ $tasks = \Httpful\Request::get($urit)
     ->addHeader('OAuth_token', $token)
     ->send();
 
-var_dump(json_decode($tasks, true)['records']);
+$tickets = json_decode($tasks, true)['records'];
 
 
-$curit = "https://sg-cmdpractice.demo.sugarcrm.eu/rest/v11_5/Contacts/'.$contact_id.'/Tasks";
+/*$curit = "https://sg-cmdpractice.demo.sugarcrm.eu/rest/v11_5/Contacts/'.$contact_id.'/Tasks";
 $create = \Httpful\Request::post($curit)
     ->body('{
     "name":"Invite to event",
@@ -55,7 +55,7 @@ $create = \Httpful\Request::post($curit)
 }')
     ->send();
 
-var_dump($create);
+var_dump($create);*/
 
 $fields = "name,date_entered,status,contact_name,date_due,date_start";
 $tfilter = '[0][status][$not_in][]=Completed';
@@ -64,19 +64,12 @@ $tasksbis = \Httpful\Request::get($urit)
     ->addHeader('OAuth_token', $token)
     ->send();
 
-var_dump(json_decode($tasksbis, true)['records']);
-
-//var_dump($responsebis);
 echo "Le token est : " .$token ."\n";
-//var_dump($array);
-//echo "{$response}";
-/*echo "{$response->body->login} joined GitHub on " .
-    date('M jS Y', strtotime($response->body->created_at)) ."\n";
 
 $smarty = new Smarty();
 
 $smarty->assign(array(
     "page" => null,
-    "albums" => $albums,
-    "artists" => $artists
-))->display('views/main.tpl');*/
+    "contacts" => $array,
+    "tasks" => $tickets
+))->display('views/main.tpl');

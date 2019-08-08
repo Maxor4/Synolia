@@ -9,16 +9,30 @@ $(document).ready(function() {
         ]
     } );
     $('#dtArtiste').DataTable();
-} );
+});
 
-function switchTable(){
-    $('#artiste').toggle();
-    $('#album').toggle();
-    $('#boutonSwitch').text($('#artiste').visible ? "Liste albums" : "Liste Artistes");
-}
+function callAjax(){
+    console.log('ajax');
 
-function affichageDetails(id_album) {
-    $('#ongletAlbum'+id_album).toggle();
+    envoieAjax({
+        url: "https://sg-cmdpractice.demo.sugarcrm.eu/rest/v11_5/oauth2/token",
+        headers: {
+            //'api-key': apiKey,
+            //"x-csrf-token": apiToken,
+            'Content-Type': 'application/json'
+        },
+        data:{
+            grant_type:"password",
+            client_id:"sugar",
+            client_secret:"",
+            username:"will",
+            password:"MazY7eC6z$W!eC8W",
+            platform:"base"
+        },
+        success: function (data) {
+            console.log(data)
+        }
+    });
 }
 
 function envoieAjax(param, fonctionFail) {
