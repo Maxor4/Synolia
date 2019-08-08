@@ -1,15 +1,10 @@
 <div class="container">
     <br />
 
-    <div>
-        <p class="greeting-id">The ID is </p>
-        <p class="greeting-content">The content is </p>
-    </div>
-
     <h3 align="center">Contacts</h3>
 
     <div id="album" class="table-responsive" style="margin-top: 5em">
-        <table id="dtAlbum" class="table table-striped table-bordered table-sm" width="100%">
+        <table id="dtContacts" class="table table-striped table-bordered table-sm" width="100%">
             <thead>
                 <tr>
                     <th>Prenom</th>
@@ -29,7 +24,7 @@
         </table>
     </div>
     <div id="artiste" class="table-responsive display-none" style="margin-top: 4em; margin-bottom: 3em">
-        <table id="dtArtiste" class="table table-striped table-bordered table-sm" width="100%">
+        <table id="dtTask" class="table table-striped table-bordered table-sm" width="100%">
             <thead>
             <tr>
                 <th>Nom</th>

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#dtAlbum').DataTable({
+    $('#dtContacts').DataTable({
         "language": {
             "decimal": ".",
             "thousands": " "
@@ -8,12 +8,10 @@ $(document).ready(function() {
             { "type": "currency", "targets": 4 }
         ]
     } );
-    $('#dtArtiste').DataTable();
+    $('#dtTask').DataTable();
 });
 
 function callAjax(){
-    console.log('ajax');
-
     envoieAjax({
         url: "https://sg-cmdpractice.demo.sugarcrm.eu/rest/v11_5/oauth2/token",
         headers: {
