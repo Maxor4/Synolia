@@ -3,6 +3,6 @@
   "version": "0.1.0",
   "dependencies": {
     "bootstrap-material-design": "^0.5.10",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   }
 }
